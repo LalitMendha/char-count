@@ -4,7 +4,26 @@ import { useState } from 'react';
 function CharCounter(){
 
   const [text, setText] = useState("");  //Text state that will be updated.
-  const [count, setCount] = useState(0)  //Counter state that will be updated.
+  const [count, setCount] = useState(0);  //Counter state that will be updated.
+  const likeCounter = [
+    {
+      btnId: "❤️",
+      count: 0
+    },
+    {
+      btnId: "👍",
+      count: 0
+    },
+    {
+      btnId: "🔥",
+      count: 0
+    },
+    {
+      btnId: "💯",
+      count: 0
+    }
+  ]
+  const [likeCount, setLikeCount] = useState(likeCounter)  //Like Button count for 
 
   function handleInputChange(oEvent){
     let tweet = oEvent.target.value;
@@ -24,6 +43,12 @@ function CharCounter(){
     setText("");    //make text as initial
    }
 
+   function onHandleLike(index){
+    let newArr = [...likeCount]
+    newArr[index].count = newArr[index].count + 1;
+    setLikeCount(newArr); 
+  }
+
   return(
     <div className="container">
       <header>
@@ -39,7 +64,15 @@ function CharCounter(){
       </main>
       <footer>
           <div>
-              <div className="icons">❤️ 👍 🔥 💯</div> 
+                <ul className="icon-list">
+                {likeCount.map((item, index)=>{
+                  return(
+                    <li className="icon-item">
+                       <button onClick={()=> onHandleLike(index)}>{item.btnId}</button>{item.count}
+                    </li>
+                  )
+                })}
+                </ul>
           </div>
       </footer>
     </div>
