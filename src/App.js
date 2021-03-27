@@ -58,8 +58,8 @@ function CharCounter(){
       <main>
           <textarea onChange={handleInputChange} id="id-text" maxLength="500" value={text} placeholder="What's happening?" rows="5" cols="50" />
           <div className="count">
-            <button onClick={handleOnClick}>Clear</button>
-            <button> {count} / 500</button>
+            <button className="btn-clear" onClick={handleOnClick}>Clear</button>
+            <button className="btn-count"> {count} / 500</button>
           </div> 
       </main>
       <footer>
