@@ -11,7 +11,7 @@
 .container{
   /* margin-top: 30vh;
   margin-left: 30vw; */
-  /* margin: auto; */
+  margin: auto;
   background-color: var(--blue);
   border: 1px solid black;
   width: 400px;
@@ -88,7 +88,7 @@ footer .icon-item{
   margin-left: 30vw;
   background-color: var(--blue);
   border: 1px solid black;
-  width: 400px;
+  width: 40%px;
   display: grid;
   grid-template-rows: 1fr 3fr 1fr;
   grid-template-columns: 1fr 3fr 1fr;
